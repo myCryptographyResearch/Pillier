@@ -74,6 +74,12 @@ class Server:
         print("Server {} is created successfuly!".format(self.servername))
 
 
+    def decryptor(self, ciphertext):
+        plaintext = self.cryptographer.decrypt(ciphertext)
+
+        return plaintext
+
+
 class Client:
     def __init__(self, clientname, server):
         self.clientname = clientname
