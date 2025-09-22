@@ -2,6 +2,7 @@ import math
 import random
 class Pillier:
     def __init__(self):
+        self.key_gen()
         print("Pillier cryptographi cinstructore is called...")
 
 
