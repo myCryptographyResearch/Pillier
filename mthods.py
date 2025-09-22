@@ -17,17 +17,34 @@ class Pillier:
     def get_public_key(self):
         return self.public_key
 
+    def private_key_generator(self):
+        public_key = self.public_key
+        n = public_key['n']
+        g = public_key['g']
+
+        lmbda = math.lcm(self.p - 1, self.q - 1)
+        mu = pow(self.lx(pow(g, lmbda, n * n)), -1, n)
+
+        self.private_key = {
+            "lmbda": lmbda,
+            "mu": mu
+        }
+
+    def get_private_key(self):
+        return self.private_key
+
     def key_gen(self):
         self.p = 13
         self.q = 17
         self.phi = (self.p - 1) * (self.q - 1)
 
-
-        self.lmbda = math.lcm(self.p - 1, self.q - 1)
-        self.mu = pow(self.lx(pow(self.g, self.lmbda, self.n * self.n)), -1, self.n)
+        self.public_key_generator()
+        self.private_key_generator()
 
     def lx(self, x):
-        y = (x - 1) / self.n
+        public_key = self.public_key
+        n = public_key['n']
+        y = (x - 1) / n
         return int(y)
 
     def encrypt(self, m, r):
