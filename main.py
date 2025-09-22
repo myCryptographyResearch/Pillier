@@ -1,7 +1,6 @@
 from mthods import *
 
 
-
 server1 = Server("localhost")
 if type(server1).__name__ == 'Server':
     print("hi")
