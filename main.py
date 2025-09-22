@@ -18,4 +18,6 @@ server1 = Server("localhost")
 if type(server1).__name__ == 'Server':
     print("hi")
 
-client1 =
+client1 = Client("Telescope1", server1)
+client2 = Client("Telescope2", server1)
+client3 = Client("Telescope3", server1)
