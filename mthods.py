@@ -3,12 +3,16 @@ class Pillier:
     def __init__(self):
         print("Pillier cryptographi cinstructore is called...")
 
+
     def key_gen(self):
         self.p = 13
         self.q = 7
         self.n = self.p * self.q
         self.phi = (self.p - 1) * (self.q - 1)
 
+    def lx(self, x):
+        y = (x - 1) / self.n
+        return int(y)
 
 
 class Server:
