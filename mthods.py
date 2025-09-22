@@ -5,14 +5,24 @@ class Pillier:
         self.key_gen()
         print("Pillier cryptographi cinstructore is called...")
 
+    def public_key_generator(self):
+        n = self.p * self.q
+        g = random.randint(0, n * n)
+
+        self.public_key = {
+            "n": n,
+            "g": g
+        }
+
+    def get_public_key(self):
+        return self.public_key
 
     def key_gen(self):
         self.p = 13
-        self.q = 7
-        self.n = self.p * self.q
+        self.q = 17
         self.phi = (self.p - 1) * (self.q - 1)
 
-        self.g = random.randint(0, self.n * self.n)
+
         self.lmbda = math.lcm(self.p - 1, self.q - 1)
         self.mu = pow(self.lx(pow(self.g, self.lmbda, self.n * self.n)), -1, self.n)
 
