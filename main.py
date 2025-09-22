@@ -1,4 +1,4 @@
-from mthods import Server, Client
+from mthods import *
 
 
 
@@ -17,3 +17,6 @@ p = server1.decryptor(c)
 print(m)
 print(c)
 print(p)
+
+for log in logs.logs:
+    print(log)
