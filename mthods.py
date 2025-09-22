@@ -81,3 +81,11 @@ class Client:
         self.cryptographer = self.server.cryptographer
         self.public_key = self.cryptographer.get_public_key()
         print("Client {} is created on {} successfuly!".format(self.clientname, self.server.servername))
+
+
+    def encryptor(self, massage):
+        n = self.public_key['n']
+        r = random.randint(0, n)
+        ciphertext = self.cryptographer.encrypt(massage, r)
+
+        return ciphertext
