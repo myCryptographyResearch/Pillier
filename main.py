@@ -1,4 +1,4 @@
-from mthods import Server, Pillier
+from mthods import Server, Client
 import random
 
 """cryptographer = Pillier()
@@ -17,3 +17,5 @@ print(p)"""
 server1 = Server("localhost")
 if type(server1).__name__ == 'Server':
     print("hi")
+
+client1 =

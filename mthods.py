@@ -72,3 +72,12 @@ class Server:
         self.public_key = self.cryptographer.get_public_key()
         self.private_key = self.cryptographer.get_private_key()
         print("Server {} is created successfuly!".format(self.servername))
+
+
+class Client:
+    def __init__(self, clientname, server):
+        self.clientname = clientname
+        self.server = server
+        self.cryptographer = self.server.cryptographer
+        self.public_key = self.cryptographer.get_public_key()
+        print("Client {} is created on {} successfuly!".format(self.clientname, self.server.servername))
