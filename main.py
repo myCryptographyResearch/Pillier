@@ -1,7 +1,7 @@
 from mthods import Server, Pillier
 import random
 
-cryptographer = Pillier()
+"""cryptographer = Pillier()
 
 m = 123
 n = 13*7
@@ -11,7 +11,9 @@ c = cryptographer.encrypt(m, r)
 p = cryptographer.decrypt(c)
 
 print(c)
-print(p)
+print(p)"""
 
 
 server1 = Server("localhost")
+if type(server1).__name__ == 'Server':
+    print("hi")

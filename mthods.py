@@ -68,4 +68,7 @@ class Pillier:
 class Server:
     def __init__(self, servername):
         self.servername = servername
+        self.cryptographer = Pillier()
+        self.public_key = self.cryptographer.get_public_key()
+        self.private_key = self.cryptographer.get_private_key()
         print("Server {} is created successfuly!".format(self.servername))
