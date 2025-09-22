@@ -20,12 +20,12 @@ class Pillier:
         return int(y)
 
     def encrypt(self, m, r):
-        assert math.gcd(r, n) == 1
-        c = (pow(g, m, n * n) * pow(r, n, n * n)) % (n * n)
+        assert math.gcd(r, self.n) == 1
+        c = (pow(self.g, m, self.n * self.n) * pow(r, self.n, self.n * self.n)) % (self.n * self.n)
         return c
 
     def decrypt(self, c):
-        p = (lx(pow(c, lmbda, n * n)) * mu) % n
+        p = (self.lx(pow(c, self.lmbda, self.n * self.n)) * self.mu) % self.n
         return p
 
 
