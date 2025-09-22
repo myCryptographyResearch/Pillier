@@ -19,6 +19,15 @@ class Pillier:
         y = (x - 1) / self.n
         return int(y)
 
+    def encrypt(self, m, r):
+        assert math.gcd(r, n) == 1
+        c = (pow(g, m, n * n) * pow(r, n, n * n)) % (n * n)
+        return c
+
+    def decrypt(self, c):
+        p = (lx(pow(c, lmbda, n * n)) * mu) % n
+        return p
+
 
 class Server:
     def __init__(self, servername):
