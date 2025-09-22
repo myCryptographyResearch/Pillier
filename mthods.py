@@ -1,9 +1,19 @@
 import math
 import random
+
+class LOGS:
+    def __init__(self):
+        self.logs = []
+        log = {
+            "action": "Start logs!"
+        }
+        self.logs.append(log)
+logs = LOGS()
 class Pillier:
     def __init__(self):
         self.key_gen()
-        print("Pillier cryptographi cinstructore is called...")
+        log = {"action": "Start piller!"}
+        logs.logs.append(log)
 
     def public_key_generator(self):
         n = self.p * self.q
@@ -13,6 +23,8 @@ class Pillier:
             "n": n,
             "g": g
         }
+        log = {"action": "Public key generated!"}
+        logs.logs.append(log)
 
     def get_public_key(self):
         return self.public_key
@@ -29,6 +41,8 @@ class Pillier:
             "lmbda": lmbda,
             "mu": mu
         }
+        log = {"action": "Private key generated!"}
+        logs.logs.append(log)
 
     def get_private_key(self):
         return self.private_key
